@@ -21,3 +21,28 @@
 
 ### Next step
 - Understand SGID on directories with examples
+
+## 26-12-2025
+
+-**Time spent:** 3 hours
+
+### What I tested
+- Created users and groups (useradd , groupadd)
+- Create Directory and Change group (mkdir, chgrp)
+- Give SGID for Group Inherritance (chmod g+s "Directory Name")
+- Create new File as new user (touch file.txt)
+
+### What confused me initially
+- The confusion was about access, not creation ownership.
+
+### What finally clicked
+- A user can access his own home directory , and create files inside SGID if user is member of authorize group. 
+
+### One mistake I made
+- Create directory inside home directory.
+
+### One security insight
+- A current user can't see another user home directory and SGID does not grant access; it only enforces group ownership after access is allowed.
+
+### Next step
+- Learn about sticky bit concept deeply.
