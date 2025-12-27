@@ -58,7 +58,7 @@
 
 ### Key Learnings
 - SGID enforces group ownership, not access
-- Sticky bit restricts users, not root
+- Sticky bit restricts users, not root.
 - Wrong directory permissions cause real vulnerabilities
 - Binary files execute directly on CPU
 
