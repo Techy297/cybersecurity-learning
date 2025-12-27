@@ -46,3 +46,22 @@
 
 ### Next step
 - Learn about sticky bit concept deeply.
+
+## 27-12-2025
+
+### Topics
+- SGID on directories (group inheritance vs permissions)
+- Sticky bit behavior and root bypass
+- UID 0 and privilege model
+- Linux directory structure (/home, /etc, /var, /tmp, /usr)
+- Binary files vs scripts
+
+### Key Learnings
+- SGID enforces group ownership, not access
+- Sticky bit restricts users, not root
+- Wrong directory permissions cause real vulnerabilities
+- Binary files execute directly on CPU
+
+### Status
+Completed with hands-on testing
+
