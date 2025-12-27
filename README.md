@@ -1,3 +1,6 @@
+> Note: GitHub day numbers reflect when logging started.
+> Actual learning journey began earlier (Day 1–2 not logged).
+
 # Cybersecurity Learning & Progress
 
 Hi, I'm Juned.  
@@ -24,3 +27,4 @@ It is used to track progress and reinforce concepts through writing.
 
 ## Progress Log
 - Repository initialized
+
