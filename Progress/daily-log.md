@@ -66,3 +66,32 @@
 Completed with hands-on testing
 
 29-12-2025 : Rest day — health first. Resume tomorrow.
+
+## 📅 30-12-2025
+
+**Time Spent:** 2.5 hours
+
+**Focus:** Linux filesystem permissions (SGID, Sticky Bit, Inodes)
+
+### 🛠 What I Practiced
+- Created shared directories with SGID
+- Tested sticky bit behavior on delete/rename
+- Compared in-place write vs replace-write
+- Observed Vim save behavior (:w vs :wq)
+
+### 🧠 What I Understood
+- Directories map filenames to inodes
+- Inodes represent the real file and data blocks
+- Sticky bit protects directory entries, not file content
+- Many editors save by replacing files, not writing in-place
+
+### ❌ Mistakes / Confusions
+- Assumed sticky bit makes files write-protected
+- Confused file write with file replacement
+
+### ✅ Final Conclusion
+Sticky bit blocks delete/rename (file replacement), not file writing.
+
+### ➡️ Next Step
+- Resume SUID analysis (/usr/bin/passwd, sudo, pkexec)
+
