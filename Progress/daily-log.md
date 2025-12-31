@@ -95,3 +95,36 @@ Sticky bit blocks delete/rename (file replacement), not file writing.
 ### ➡️ Next Step
 - Resume SUID analysis (/usr/bin/passwd, sudo, pkexec)
 
+### 📅 31-12-2025
+**Time Spent:** 3 hour
+
+### 🔧 What I Practiced
+- SGID on directories (hands-on lab)
+- Group ownership inheritance behavior
+- User/group permission testing
+- Default permission behavior via umask
+
+### 🧪 Lab Details
+- Created users and groups
+- Applied SGID (chmod 2770) on a shared directory
+- Verified file group inheritance
+- Tested access denial for non-group users
+- Observed file permissions affected by system umask
+
+### 🧠 Key Learnings
+- SGID enforces group ownership inheritance, not permissions
+- Write access depends on directory permissions, not SGID alone
+- Default file permissions are influenced by umask
+- umask can be enforced at PAM level, overriding shell configs
+
+### 🔍 Extra Exploration
+- Traced umask enforcement to PAM (pam_umask.so)
+- Learned login order and why .bashrc may not apply
+
+### ✅ Status
+- SGID lab: Completed
+- umask behavior: Understood
+- System-level debugging: Improved
+
+### 🧠 One-line Reflection
+Today I moved from “using Linux” to understanding how Linux decides.
