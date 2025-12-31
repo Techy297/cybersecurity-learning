@@ -119,7 +119,7 @@ Sticky bit blocks delete/rename (file replacement), not file writing.
 
 ### 🔍 Extra Exploration
 - Traced umask enforcement to PAM (pam_umask.so)
-- Learned login order and why .bashrc may not apply
+- Learned login order and why . bashrc may not apply
 
 ### ✅ Status
 - SGID lab: Completed
