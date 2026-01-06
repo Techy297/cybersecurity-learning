@@ -136,3 +136,51 @@ Today I moved from “using Linux” to understanding how Linux decides.
 **Reality check:** Planning and imagination replaced execution  
 **Lesson:** Consistency and logging matter more than intensity  
 **Decision:** Reset discipline and resume daily task structure from 06-01-2026
+
+### 06-01-2026
+
+## 1. What did I work on?
+- SUID, SGID, and Sticky Bit behavior on directories (tested with two users)
+- Analysis of the `sudo` binary and sudo misconfiguration scenarios
+
+---
+
+## 2. Why did I work on it?
+- To verify real SUID behavior through hands-on testing
+- To understand the difference between SGID and Sticky Bit in shared directories
+- To analyze how sudo misconfiguration can lead to privilege escalation
+
+---
+
+## 3. What did I do?
+### Hour 1
+- Created a script as `root` containing system commands (`apt update`)
+- Applied SUID to the script and executed it as `user1`
+- Created files as `user1` and attempted modification as `user2`
+- Applied Sticky Bit on a shared directory and tested file editing
+
+### Hour 2
+- Located the `sudo` binary
+- Listed file permissions and ownership
+- Reviewed sudo behavior under misconfigured `/etc/sudoers` rules
+
+---
+
+## 4. What did I observe?
+### Hour 1
+- SUID script execution failed with **Permission Denied**
+- Sticky Bit on a shared directory blocked editor save operations due to rename behavior
+
+### Hour 2
+- Misconfigured sudoers rules can allow unauthorized users to run privileged commands
+- `sudo` execution is logged by default unless logging is explicitly disabled or bypassed
+
+---
+
+## 5. What did I learn?
+- SUID alone does not authorize execution of system-level commands like `apt`
+- Command authorization is controlled by `/etc/sudoers`, not file permissions
+- Sticky Bit should not be used on shared project directories
+- Privilege escalation via sudo is caused by misconfiguration, not sudo binary flaws
+- Sudo maintains audit logs by default, making misuse traceable
+
