@@ -126,6 +126,9 @@ Sticky bit blocks delete/rename (file replacement), not file writing.
 - umask behavior: Understood
 - System-level debugging: Improved
 
+### 🧠 One-line Reflection
+Today I moved from “using Linux” to understanding how Linux decides.
+
 ## 01–05 Jan 2026
 **Status:** Inconsistent / Partial execution  
 **What I did:** College technical competition prep, light C revision, limited hands-on work  
@@ -133,6 +136,3 @@ Sticky bit blocks delete/rename (file replacement), not file writing.
 **Reality check:** Planning and imagination replaced execution  
 **Lesson:** Consistency and logging matter more than intensity  
 **Decision:** Reset discipline and resume daily task structure from 06-01-2026
-
-### 🧠 One-line Reflection
-Today I moved from “using Linux” to understanding how Linux decides.
