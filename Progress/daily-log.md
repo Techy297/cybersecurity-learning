@@ -184,3 +184,17 @@ Today I moved from “using Linux” to understanding how Linux decides.
 - Privilege escalation via sudo is caused by misconfiguration, not sudo binary flaws
 - Sudo maintains audit logs by default, making misuse traceable
 
+- ## 10-01-2026
+
+### What I did
+- Revised previous notes  
+- Learned core concepts of programming languages (what & why)  
+- Installed Python environment  
+- Studied Python basics:
+  - Modules  
+  - pip  
+  - Comments  
+
+### Status
+- Productive day ✅
+
