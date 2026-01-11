@@ -198,3 +198,41 @@ Today I moved from “using Linux” to understanding how Linux decides.
 ### Status
 - Productive day ✅
 
+- # 📅 Daily Learning Log — 11-01-2026
+**Time Spent:** 3 hours
+
+## ✅ What I Learned Today
+
+### 1. SUID Binaries
+- Understood what SUID is and why it is needed  
+- Verified SUID binaries run with file owner (root) privileges  
+- Observed access to protected files during execution
+
+### 2. sudo & sudoers
+- Explored `/etc/sudoers` file  
+- Learned sudo group members get full sudo privileges  
+- Practical: created user → added to sudo group → tested sudo commands (worked)
+
+### 3. Directory Permissions
+- Understood rwx behavior on directories  
+- Without `x` → cannot enter directory  
+- Without `r` → cannot list contents  
+- Tested behavior outside home directory
+
+---
+
+## 🔁 Revision of Previous Topics
+- Revised:
+  - chmod, chown, permissions  
+  - SUID, SGID, Sticky Bit  
+  - User/group concepts  
+
+- Strengthened understanding of:
+  - Privilege escalation basics  
+  - Access control
+---
+
+## 🧠 Key Takeaway
+> Wrong permissions or sudo config = serious security risk.
+
+
