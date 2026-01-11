@@ -198,7 +198,7 @@ Today I moved from “using Linux” to understanding how Linux decides.
 ### Status
 - Productive day ✅
 
-- # 📅 Daily Learning Log — 11-01-2026
+- ### 📅 Daily Learning Log — 11-01-2026
 **Time Spent:** 3 hours
 
 ## ✅ What I Learned Today
