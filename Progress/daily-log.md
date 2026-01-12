@@ -235,4 +235,66 @@ Today I moved from “using Linux” to understanding how Linux decides.
 ## 🧠 Key Takeaway
 > Wrong permissions or sudo config = serious security risk.
 
+## 12-01-2026
+**Time Spent:** 3 hours
+
+### What I Practiced
+- Listed SUID binaries using:
+  - find / -perm -4000 -type f 2>/dev/null
+- Analyzed behaviour of:
+  - /usr/bin/sudo
+  - /usr/bin/su
+- Created a test user and configured sudo access
+- Tested privilege escalation through sudo
+
+---
+
+### Binary Analysis
+
+#### 1. /usr/bin/sudo
+
+**Purpose:**  
+Allows permitted users to execute commands as another user (usually root).
+
+**Files Involved:**
+- Authorization: /etc/sudoers  
+- Authentication: /etc/pam.d/sudo → PAM reads /etc/shadow
+
+**Why SUID Required:**  
+Authentication requires access to /etc/shadow, which is readable only by root.
+
+---
+
+#### 2. /usr/bin/su
+
+**Purpose:**  
+Allows a user to switch to another account after successful authentication.
+
+**Files Involved:**
+- Authentication handled by PAM: /etc/pam.d/su  
+- PAM accesses /etc/shadow for password verification
+
+**Why SUID Required:**  
+To allow non-root users to authenticate using protected password hashes.
+
+---
+
+### Security Observation
+
+If sudoers contains:
+user ALL=(ALL:ALL) ALL
+
+Then the user can:
+- Run any command as root
+- Modify system files
+- Edit /etc/shadow
+- Fully compromise the system
+
+This is a case of **privilege escalation due to sudoers misconfiguration**.
+
+---
+
+### Revision
+- SUID, SGID, Sticky Bit behaviour
+- Difference between authentication (PAM) and authorization (sudoers)
 
