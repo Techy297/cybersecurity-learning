@@ -298,3 +298,77 @@ This is a case of **privilege escalation due to sudoers misconfiguration**.
 - SUID, SGID, Sticky Bit behaviour
 - Difference between authentication (PAM) and authorization (sudoers)
 
+
+## Date: 18-01-2026
+
+### What I Practiced
+- SGID behavior on shared directories  
+- Sticky bit behavior in world-writable directories  
+- Real UID vs Effective UID using the `passwd` SUID binary  
+
+---
+
+## SGID (Set Group ID) on Directories
+
+### Observation
+- **Before SGID:**  
+  Files created inside the shared directory inherited the creator’s **primary group** (e.g., user1, user2), which caused inconsistent permissions.
+
+- **After SGID enabled:**  
+  Files consistently inherited the directory group (`devteam`), allowing predictable collaboration.
+
+### Example permission
+- rwxrws---
+The `s` in the group execute position confirms SGID is active.
+
+### Key Insight
+> SGID on directories enforces group ownership inheritance and prevents permission drift in shared environments like dev folders and web directories.
+
+---
+
+## Sticky Bit
+
+### Before Sticky Bit
+- user2 could delete files created by user1 in a world-writable directory.
+
+### After Sticky Bit
+- user2 could NOT delete or rename files owned by user1.
+
+### Security Insight
+> Sticky bit protects shared directories (like `/tmp`) by preventing users from deleting or renaming files they do not own, reducing the risk of sabotage and denial-of-service attacks.
+
+---
+
+## Privilege Logic (SUID, passwd, UID)
+
+### Concepts
+- **Real UID (RUID):** The user who launched the process  
+- **Effective UID (EUID):** The privileges the process runs with (root for SUID binaries)
+
+### passwd behavior
+- `passwd` runs with **EUID = root** because it must modify `/etc/shadow`
+- It still enforces authorization using the **Real UID**
+
+### Authorization logic (simplified)
+- Allow if:
+- RUID == target user
+- OR RUID == 0 (root)
+- Else:
+- Deny
+
+
+### Key Insight
+> The passwd binary requires SUID because `/etc/shadow` is writable only by root. PAM handles authentication, but filesystem authorization is enforced by process privileges and internal program logic.
+
+---
+
+## Commands Used
+- useradd, groupadd, usermod  
+- chmod g+s, chmod +t  
+- ls -l, ls -ld, id  
+- passwd  
+
+---
+
+## Final Security Reflection
+> SGID ensures stable collaboration permissions, sticky bit protects shared directories from abuse, and understanding RUID vs EUID is critical for understanding privilege boundaries and potential escalation paths.
