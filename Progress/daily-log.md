@@ -350,11 +350,11 @@ The `s` in the group execute position confirms SGID is active.
 - It still enforces authorization using the **Real UID**
 
 ### Authorization logic (simplified)
-- Allow if:
-- RUID == target user
-- OR RUID == 0 (root)
-- Else:
-- Deny
+Allow if:
+RUID == target user
+OR RUID == 0 (root)
+Else:
+Deny
 
 
 ### Key Insight
