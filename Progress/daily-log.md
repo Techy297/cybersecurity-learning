@@ -375,8 +375,8 @@ Deny
 
 Gap update (19-01-2026 → 21-02-2026)
 
-10 days — No screen
-7 days — Exams
-3 days — Case study competition (1st Rank)
+- 10 days — No screen
+- 7 days — Exams
+- 3 days — Case study competition (1st Rank)
 
 Back to regular work.
