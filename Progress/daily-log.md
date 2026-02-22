@@ -372,3 +372,11 @@ Deny
 
 ## Final Security Reflection
 > SGID ensures stable collaboration permissions, sticky bit protects shared directories from abuse, and understanding RUID vs EUID is critical for understanding privilege boundaries and potential escalation paths.
+
+Gap update (19-01-2026 → 21-02-2026)
+
+10 days — No screen
+7 days — Exams
+3 days — Case study competition (1st Rank)
+
+Back to regular work.
