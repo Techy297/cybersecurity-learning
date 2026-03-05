@@ -380,3 +380,33 @@ Gap update (19-01-2026 → 21-02-2026)
 - 3 days — Case study competition (1st Rank)
 
 Back to regular work.
+
+## Log Update — 21-02-2026 → 05-03-2026
+
+### Work Done
+- Continued development of SJBCA Telegram Bot
+- Deployed bot on Oracle Cloud Ubuntu server
+- Created systemd service `sjbca_bot.service`
+- Configured bot to run 24/7
+- Enabled auto-start on server reboot
+
+### Server Structure
+/home/ubuntu/bots/sjbca_bot/
+/home/ubuntu/data/student.db
+
+### Commands Practiced
+systemctl status sjbca_bot
+journalctl -u sjbca_bot -f
+systemctl restart sjbca_bot
+systemctl daemon-reload
+
+### Key Learnings
+- systemd manages background services
+- `Restart=always` restarts service if the process crashes
+- Services should run as non-root users (`User=ubuntu`)
+- Separate database from application code for safer deployments
+
+### Next Focus
+- Improve bot logging
+- Implement database backups
+- Continue backend development
